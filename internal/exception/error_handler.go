@@ -10,13 +10,13 @@ import (
 // define error here
 var (
 	// error user domain
-	ErrUserAlreadyExists    = fiber.NewError(fiber.StatusBadRequest, "user already exists")
-	ErrUserNotFound         = fiber.NewError(fiber.StatusNotFound, "User is not found")
 	ErrUserAlreadyExist     = fiber.NewError(fiber.StatusBadRequest, "username already exist")
 	ErrUserPasswordNotMatch = fiber.NewError(fiber.StatusBadRequest, "password not match")
 	ErrUserUnauthorized     = fiber.NewError(fiber.StatusUnauthorized, "User unauthorized")
 
 	//error
+	ErrDataAlreadyExists   = fiber.NewError(fiber.StatusBadRequest, "data already exists")
+	ErrDataNotFound        = fiber.NewError(fiber.StatusNotFound, "data is not found")
 	ErrInternalServerError = fiber.ErrInternalServerError
 )
 
