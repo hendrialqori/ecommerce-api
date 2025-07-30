@@ -4,7 +4,12 @@ go 1.24.3
 
 require github.com/go-playground/validator/v10 v10.27.0
 
-require github.com/golang-jwt/jwt/v5 v5.2.3 // indirect
+require (
+	github.com/cloudinary/cloudinary-go/v2 v2.11.0 // indirect
+	github.com/creasty/defaults v1.7.0 // indirect
+	github.com/golang-jwt/jwt/v5 v5.2.3 // indirect
+	github.com/gorilla/schema v1.4.1 // indirect
+)
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
