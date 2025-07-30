@@ -60,3 +60,43 @@ func (h *UserHandler) Login(c *fiber.Ctx) error {
 			Data: res,
 		})
 }
+
+func (h *UserHandler) Current(c *fiber.Ctx) error {
+	auth := c.Locals("auth").(*model.Auth)
+
+	res, err := h.UserUseCase.Current(c.Context(), auth.Email)
+	if err != nil {
+		h.Logger.WithError(err).Error("error getting current user")
+		return err
+	}
+
+	return c.
+		Status(fiber.StatusOK).
+		JSON(&model.WebResponse[*model.UserResponse]{
+			Data: res,
+		})
+}
+
+func (h *UserHandler) Update(c *fiber.Ctx) error {
+	auth := c.Locals("auth").(*model.Auth)
+
+	req := &model.UpdateUserRequest{}
+	req.Email = auth.Email
+
+	if err := c.BodyParser(req); err != nil {
+		h.Logger.WithError(err).Error("error parsing request body")
+		return err
+	}
+
+	res, err := h.UserUseCase.Update(c.Context(), req)
+	if err != nil {
+		h.Logger.WithError(err).Error("error updating user")
+		return err
+	}
+
+	return c.
+		Status(fiber.StatusOK).
+		JSON(&model.WebResponse[*model.UserResponse]{
+			Data: res,
+		})
+}

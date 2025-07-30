@@ -10,17 +10,17 @@ import (
 type UserRepository interface {
 	Create(ctx context.Context, user *domain.User) error
 	Update(ctx context.Context, user *domain.User) error
-	FindByNoTelp(ctx context.Context, noTelp string) (*domain.User, error)
+	FindByEmail(ctx context.Context, noTelp string) (*domain.User, error)
 }
 
 type UserRepositoryImpl struct {
 	DB *gorm.DB
 }
 
-// FindByNoTelp implements UserRepository.
-func (u *UserRepositoryImpl) FindByNoTelp(ctx context.Context, noTelp string) (*domain.User, error) {
+// FindByEmail implements UserRepository.
+func (u *UserRepositoryImpl) FindByEmail(ctx context.Context, noTelp string) (*domain.User, error) {
 	user := &domain.User{}
-	if err := u.DB.WithContext(ctx).Where("notelp = ?", noTelp).Take(user).Error; err != nil {
+	if err := u.DB.WithContext(ctx).Where("email = ?", noTelp).Take(user).Error; err != nil {
 		return nil, err
 	}
 	return user, nil
