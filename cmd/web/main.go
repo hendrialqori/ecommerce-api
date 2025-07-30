@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"internship-mini-project/config"
 	"internship-mini-project/internal/delivery/http/handler"
+	"internship-mini-project/internal/delivery/http/middleware"
 	"internship-mini-project/internal/delivery/http/route"
 	"internship-mini-project/internal/domain/registry"
 	"internship-mini-project/internal/infrastructure"
@@ -33,18 +34,24 @@ func main() {
 	}
 
 	var (
+		tokoRepo    = repository.NewTokoRepository(db)
+		tokoUseCase = usecase.NewTokoUseCase(tokoRepo, logger, validate, config)
+		tokoHandler = handler.NewTokoHandler(tokoUseCase, logger, config)
+
 		userRepo    = repository.NewUserRepository(db)
-		userUseCase = usecase.NewUserUseCase(userRepo, logger, validate, config)
+		userUseCase = usecase.NewUserUseCase(userRepo, tokoRepo, logger, validate, config)
 		userHandler = handler.NewUserHandler(userUseCase, logger)
 	)
 
-	route.RegisterUserRoute(app, userHandler)
-
-	app.Get("/", func(c *fiber.Ctx) error {
+	app.Get("/api/ping!", func(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"message": "Welcome to the Internship Mini Project API",
 		})
 	})
+
+	auth := middleware.NewAuth(logger, config)
+	route.RegisterUserRoute(app, userHandler, auth)
+	route.RegisterTokoRoute(app, tokoHandler, auth)
 
 	go func() {
 		if err := app.Listen(fmt.Sprintf(":%v", port)); err != nil {
