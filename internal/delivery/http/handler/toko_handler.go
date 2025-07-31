@@ -50,8 +50,10 @@ func (h *TokoHandler) FindAll(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusOK).JSON(&model.WebResponse[[]*model.TokoResponse]{
-		Data:     tokos,
-		Metadata: query,
+		Data:       tokos,
+		Metadata:   query,
+		Message:    "Successfully retrieved all tokos",
+		StatusCode: fiber.StatusOK,
 	})
 }
 
@@ -69,7 +71,9 @@ func (h *TokoHandler) FindById(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusOK).JSON(&model.WebResponse[*model.TokoResponse]{
-		Data: toko,
+		Data:       toko,
+		Message:    "Successfully retrieved toko by ID",
+		StatusCode: fiber.StatusOK,
 	})
 }
 
@@ -83,7 +87,9 @@ func (h *TokoHandler) Current(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusOK).JSON(&model.WebResponse[*model.TokoResponse]{
-		Data: toko,
+		Data:       toko,
+		Message:    "Successfully retrieved current toko",
+		StatusCode: fiber.StatusOK,
 	})
 }
 
@@ -144,6 +150,8 @@ func (h *TokoHandler) Update(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusOK).JSON(&model.WebResponse[*model.TokoResponse]{
-		Data: toko,
+		Data:       toko,
+		Message:    "Successfully updated toko",
+		StatusCode: fiber.StatusOK,
 	})
 }

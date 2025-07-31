@@ -37,7 +37,9 @@ func (h *UserHandler) Register(c *fiber.Ctx) error {
 	return c.
 		Status(fiber.StatusCreated).
 		JSON(&model.WebResponse[*model.UserResponse]{
-			Data: res,
+			StatusCode: fiber.StatusCreated,
+			Data:       res,
+			Message:    "User registered successfully",
 		})
 }
 
@@ -57,7 +59,9 @@ func (h *UserHandler) Login(c *fiber.Ctx) error {
 	return c.
 		Status(fiber.StatusOK).
 		JSON(&model.WebResponse[*model.TokenResponse]{
-			Data: res,
+			StatusCode: fiber.StatusOK,
+			Message:    "User logged in successfully",
+			Data:       res,
 		})
 }
 
@@ -73,7 +77,9 @@ func (h *UserHandler) Current(c *fiber.Ctx) error {
 	return c.
 		Status(fiber.StatusOK).
 		JSON(&model.WebResponse[*model.UserResponse]{
-			Data: res,
+			Data:       res,
+			Message:    "Current user retrieved successfully",
+			StatusCode: fiber.StatusOK,
 		})
 }
 
@@ -97,6 +103,8 @@ func (h *UserHandler) Update(c *fiber.Ctx) error {
 	return c.
 		Status(fiber.StatusOK).
 		JSON(&model.WebResponse[*model.UserResponse]{
-			Data: res,
+			Data:       res,
+			Message:    "User updated successfully",
+			StatusCode: fiber.StatusOK,
 		})
 }
