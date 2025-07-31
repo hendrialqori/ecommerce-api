@@ -19,7 +19,7 @@ type UserUseCase interface {
 	Register(ctx context.Context, req *model.RegisterUserRequest) (*model.UserResponse, error)
 	Login(ctx context.Context, req *model.LoginUserRequest) (*model.TokenResponse, error)
 	Update(ctx context.Context, req *model.UpdateUserRequest) (*model.UserResponse, error)
-	Current(ctx context.Context, noTelp string) (*model.UserResponse, error)
+	Current(ctx context.Context, email string) (*model.UserResponse, error)
 }
 
 type UserUseCaseImpl struct {
