@@ -41,6 +41,14 @@ func main() {
 		userRepo    = repository.NewUserRepository(db)
 		userUseCase = usecase.NewUserUseCase(userRepo, tokoRepo, logger, validate, config)
 		userHandler = handler.NewUserHandler(userUseCase, logger)
+
+		categoryRepo    = repository.NewCategoryRepository(db)
+		categoryUseCase = usecase.NewCategoryUseCase(categoryRepo, logger, validate)
+		categoryHandler = handler.NewCategoryHandler(categoryUseCase, logger)
+
+		addressRepo    = repository.NewAddressRepository(db)
+		addressUseCase = usecase.NewAddressUseCase(addressRepo, logger, validate)
+		addressHandler = handler.NewAddressHandler(addressUseCase, logger)
 	)
 
 	app.Get("/api/ping!", func(c *fiber.Ctx) error {
@@ -52,6 +60,8 @@ func main() {
 	auth := middleware.NewAuth(logger, config)
 	route.RegisterUserRoute(app, userHandler, auth)
 	route.RegisterTokoRoute(app, tokoHandler, auth)
+	route.RegisterCategoryRoute(app, categoryHandler, auth)
+	route.RegisterAddressRoute(app, addressHandler, auth)
 
 	go func() {
 		if err := app.Listen(fmt.Sprintf(":%v", port)); err != nil {
