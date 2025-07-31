@@ -7,8 +7,8 @@ type TokoResponse struct {
 	IDUser    uint          `json:"id_user"`
 	NamaToko  string        `json:"nama_toko"`
 	UrlFoto   string        `json:"url_foto"`
-	CreatedAt time.Time     `json:"created_at,omitempty"`
-	UpdatedAt time.Time     `json:"updated_at,omitempty"`
+	CreatedAt time.Time     `json:"created_at"`
+	UpdatedAt time.Time     `json:"updated_at"`
 	User      *UserResponse `json:"user,omitempty"`
 }
 
