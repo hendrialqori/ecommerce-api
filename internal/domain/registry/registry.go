@@ -12,5 +12,7 @@ func RegistryModels() []Model {
 	return []Model{
 		{Model: domain.User{}},
 		{Model: domain.Toko{}},
+		{Model: domain.Category{}},
+		{Model: domain.Address{}},
 	}
 }
