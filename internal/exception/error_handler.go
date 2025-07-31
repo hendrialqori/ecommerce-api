@@ -7,6 +7,12 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+type ErrorResponse struct {
+	StatusCode int    `json:"statusCode"`
+	Message    string `json:"message"`
+	Errors     any    `json:"errors,omitempty"`
+}
+
 // define error here
 var (
 	// error user domain
@@ -23,13 +29,13 @@ var (
 func NewErrorHandler() fiber.ErrorHandler {
 	return func(c *fiber.Ctx, err error) error {
 		statusCode := fiber.StatusInternalServerError
-		var message any
-		var errorType string
+
+		var message string
+		var errors any
 
 		if e, ok := err.(*fiber.Error); ok {
 			statusCode = e.Code
-			message = e.Error()
-			errorType = "error"
+			message = e.Message
 		}
 
 		if validationErrors, ok := err.(validator.ValidationErrors); ok {
@@ -44,13 +50,13 @@ func NewErrorHandler() fiber.ErrorHandler {
 			}
 
 			statusCode = fiber.StatusBadRequest
-			message = errorMessages
-			errorType = "validation error"
+			errors = errorMessages
 		}
 
-		return c.Status(statusCode).JSON(fiber.Map{
-			"type":   errorType,
-			"errors": message,
+		return c.Status(statusCode).JSON(ErrorResponse{
+			StatusCode: statusCode,
+			Message:    message,
+			Errors:     errors,
 		})
 	}
 }
