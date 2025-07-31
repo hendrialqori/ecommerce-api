@@ -103,16 +103,16 @@ func (h *TokoHandler) Update(c *fiber.Ctx) error {
 	}
 
 	namaToko := c.FormValue("nama_toko")
-	file, err := c.FormFile("foto")
+	file, err := c.FormFile("file")
 	if err != nil {
 		h.logger.WithError(err).Error("Failed to get form file")
-		return err
+		return fiber.NewError(fiber.StatusBadRequest, err.Error())
 	}
 
 	src, err := file.Open()
 	if err != nil {
 		h.logger.WithError(err).Error("Failed to open form file")
-		return err
+		return fiber.NewError(fiber.StatusBadRequest, err.Error())
 	}
 	defer src.Close()
 
