@@ -9,7 +9,7 @@ func ToCategoryResponse(category *domain.Category) *model.CategoryResponse {
 	return &model.CategoryResponse{
 		ID:           category.ID,
 		NamaKategori: category.NamaKategori,
-		CreatedAt:    category.CreatedAt,
-		UpdatedAt:    category.UpdatedAt,
+		CreatedAt:    &category.CreatedAt,
+		UpdatedAt:    &category.UpdatedAt,
 	}
 }

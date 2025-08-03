@@ -3,10 +3,10 @@ package model
 import "time"
 
 type CategoryResponse struct {
-	ID           uint      `json:"id"`
-	NamaKategori string    `json:"nama_kategori"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	ID           uint       `json:"id"`
+	NamaKategori string     `json:"nama_kategori"`
+	CreatedAt    *time.Time `json:"created_at,omitempty"`
+	UpdatedAt    *time.Time `json:"updated_at,omitempty"`
 }
 
 type CreateCategoryRequest struct {
