@@ -20,5 +20,12 @@ func ToUserResponse(user *domain.User) *model.UserResponse {
 		IsAdmin:      user.IsAdmin,
 		CreatedAt:    user.CreatedAt,
 		UpdatedAt:    user.UpdatedAt,
+		Toko: &domain.Toko{
+			ID:        user.Toko.ID,
+			NamaToko:  user.Toko.NamaToko,
+			UrlFoto:   user.Toko.UrlFoto,
+			CreatedAt: user.Toko.CreatedAt,
+			UpdatedAt: user.Toko.UpdatedAt,
+		},
 	}
 }

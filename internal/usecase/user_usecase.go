@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/go-playground/validator/v10"
+	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
@@ -97,13 +98,23 @@ func (u *UserUseCaseImpl) Login(ctx context.Context, req *model.LoginUserRequest
 		return nil, exception.ErrDataNotFound
 	}
 
+	if user.KataSandi != req.KataSandi {
+		u.Logger.Warn("invalid credentials")
+		return nil, fiber.NewError(fiber.StatusUnauthorized, "invalid credentials")
+	}
+
 	claims := jwt.MapClaims{
 		"id":       user.ID,
 		"nama":     user.Nama,
 		"email":    user.Email,
 		"no_telp":  user.NoTelp,
 		"is_admin": user.IsAdmin,
-		"exp":      time.Now().Add(2 * time.Hour).Unix(),
+		"toko": map[string]any{
+			"id":       user.Toko.ID,
+			"nama":     user.Toko.NamaToko,
+			"url_foto": user.Toko.UrlFoto,
+		},
+		"exp": time.Now().Add(2 * time.Hour).Unix(),
 	}
 
 	token, err := jwt.NewWithClaims(jwt.SigningMethodHS256, claims).SignedString([]byte(u.Config.GetString("JWT_SECRET_KEY")))

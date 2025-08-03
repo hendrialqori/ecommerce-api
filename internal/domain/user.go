@@ -19,4 +19,6 @@ type User struct {
 	IsAdmin      bool      `gorm:"column:is_admin;type:boolean;default:false" json:"is_admin"`
 	UpdatedAt    time.Time `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
 	CreatedAt    time.Time `gorm:"column:created_at;autoCreateTime" json:"created_at"`
+
+	Toko *Toko `gorm:"foreignKey:IDUser" json:"toko,omitempty"`
 }

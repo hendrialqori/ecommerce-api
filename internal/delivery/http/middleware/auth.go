@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"internship-mini-project/internal/domain"
 	"internship-mini-project/internal/exception"
 	"internship-mini-project/internal/model"
 	"strings"
@@ -42,6 +43,11 @@ func NewAuth(logger *logrus.Logger, Config *viper.Viper) fiber.Handler {
 			Nama:    claims["nama"].(string),
 			NoTelp:  claims["no_telp"].(string),
 			IsAdmin: claims["is_admin"].(bool),
+			Toko: &domain.Toko{
+				ID:       uint(claims["toko"].(map[string]any)["id"].(float64)),
+				NamaToko: claims["toko"].(map[string]any)["nama"].(string),
+				UrlFoto:  claims["toko"].(map[string]any)["url_foto"].(string),
+			},
 		}
 
 		c.Locals("auth", auth)

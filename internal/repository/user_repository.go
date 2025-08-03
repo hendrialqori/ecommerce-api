@@ -10,7 +10,7 @@ import (
 type UserRepository interface {
 	Create(ctx context.Context, user *domain.User) error
 	Update(ctx context.Context, user *domain.User) error
-	FindByEmail(ctx context.Context, noTelp string) (*domain.User, error)
+	FindByEmail(ctx context.Context, email string) (*domain.User, error)
 }
 
 type UserRepositoryImpl struct {
@@ -18,11 +18,12 @@ type UserRepositoryImpl struct {
 }
 
 // FindByEmail implements UserRepository.
-func (u *UserRepositoryImpl) FindByEmail(ctx context.Context, noTelp string) (*domain.User, error) {
+func (u *UserRepositoryImpl) FindByEmail(ctx context.Context, email string) (*domain.User, error) {
 	user := &domain.User{}
-	if err := u.DB.WithContext(ctx).Where("email = ?", noTelp).Take(user).Error; err != nil {
-		return nil, err
+	if err := u.DB.WithContext(ctx).Preload("Toko").Where("email = ?", email).First(user).Error; err != nil {
+		return nil, err // Other error
 	}
+
 	return user, nil
 }
 
