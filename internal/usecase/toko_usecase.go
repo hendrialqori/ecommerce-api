@@ -73,8 +73,8 @@ func (t *TokoUseCaseImpl) FindAll(ctx context.Context, query *model.QueryParams)
 			IDUser:    toko.IDUser,
 			NamaToko:  toko.NamaToko,
 			UrlFoto:   toko.UrlFoto,
-			CreatedAt: toko.CreatedAt,
-			UpdatedAt: toko.UpdatedAt,
+			CreatedAt: &toko.CreatedAt,
+			UpdatedAt: &toko.UpdatedAt,
 		})
 	}
 

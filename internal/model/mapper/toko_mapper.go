@@ -11,7 +11,7 @@ func ToTokoResponse(toko *domain.Toko) *model.TokoResponse {
 		IDUser:    toko.IDUser,
 		NamaToko:  toko.NamaToko,
 		UrlFoto:   toko.UrlFoto,
-		CreatedAt: toko.CreatedAt,
-		UpdatedAt: toko.UpdatedAt,
+		CreatedAt: &toko.CreatedAt,
+		UpdatedAt: &toko.UpdatedAt,
 	}
 }

@@ -4,11 +4,11 @@ import "time"
 
 type TokoResponse struct {
 	ID        uint          `json:"id"`
-	IDUser    uint          `json:"id_user"`
+	IDUser    uint          `json:"id_user,omitempty"`
 	NamaToko  string        `json:"nama_toko"`
-	UrlFoto   string        `json:"url_foto"`
-	CreatedAt time.Time     `json:"created_at"`
-	UpdatedAt time.Time     `json:"updated_at"`
+	UrlFoto   string        `json:"url_foto,omitempty"`
+	CreatedAt *time.Time    `json:"created_at,omitempty"`
+	UpdatedAt *time.Time    `json:"updated_at,omitempty"`
 	User      *UserResponse `json:"user,omitempty"`
 }
 
