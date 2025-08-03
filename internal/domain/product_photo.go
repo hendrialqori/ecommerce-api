@@ -8,7 +8,5 @@ type ProductPhoto struct {
 	Url       string    `gorm:"column:url;type:varchar(255);not null" json:"url"`
 	CreatedAt time.Time `gorm:"column:created_at;autoCreateTime" json:"created_at"`
 	UpdatedAt time.Time `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
-
-	// Relasi ke produk
-	Produk Produk `gorm:"foreignKey:IDProduk;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"produk"`
+	Product   *Product  `gorm:"foreignKey:IDProduk;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"produk,omitempty"`
 }

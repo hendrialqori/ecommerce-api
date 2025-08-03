@@ -2,13 +2,13 @@ package domain
 
 import "time"
 
-type Produk struct {
+type Product struct {
 	ID            uint      `gorm:"primaryKey;autoIncrement" json:"id"`
 	NamaProduk    string    `gorm:"column:nama_produk;type:varchar(255);not null" json:"nama_produk"`
 	Slug          string    `gorm:"column:slug;type:varchar(255);unique;not null" json:"slug"`
-	HargaReseller string    `gorm:"column:harga_reseller;type:varchar(255);not null" json:"harga_reseller"`
-	HargaKonsumen string    `gorm:"column:harga_konsumen;type:varchar(255);not null" json:"harga_konsumen"`
-	Stok          int       `gorm:"column:stok;not null" json:"stok"`
+	HargaReseller uint      `gorm:"column:harga_reseller;not null" json:"harga_reseller"`
+	HargaKonsumen uint      `gorm:"column:harga_konsumen;not null" json:"harga_konsumen"`
+	Stok          uint      `gorm:"column:stok;not null" json:"stok"`
 	Deskripsi     string    `gorm:"column:deskripsi;type:text" json:"deskripsi"`
 	CreatedAt     time.Time `gorm:"column:created_at;autoCreateTime" json:"created_at"`
 	UpdatedAt     time.Time `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
@@ -18,6 +18,7 @@ type Produk struct {
 	IDCategory uint `gorm:"column:id_category;not null;unique" json:"id_category"`
 
 	// Relasi
-	Toko     Toko     `gorm:"foreignKey:IDToko;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"toko"`
-	Category Category `gorm:"foreignKey:IDCategory;references:ID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL" json:"category"`
+	Toko         *Toko           `gorm:"foreignKey:IDToko;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"toko,omitempty"`
+	Category     *Category       `gorm:"foreignKey:IDCategory;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"category,omitempty"`
+	ProductPhoto *[]ProductPhoto `gorm:"foreignKey:IDProduk" json:"foto,omitempty"`
 }

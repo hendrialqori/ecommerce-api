@@ -49,6 +49,17 @@ func main() {
 		addressRepo    = repository.NewAddressRepository(db)
 		addressUseCase = usecase.NewAddressUseCase(addressRepo, logger, validate)
 		addressHandler = handler.NewAddressHandler(addressUseCase, logger)
+
+		photoRepo    = repository.NewProductPhotoRepository(db)
+		photoUseCase = usecase.NewProductPhotoUseCase(photoRepo, logger, validate)
+		photoHandler = handler.NewProductPhotoHandler(photoUseCase, logger, config)
+
+		productRepo    = repository.NewProductRepository(db)
+		productUseCase = usecase.NewProductUseCase(productRepo, logger, validate)
+		productHandler = handler.NewProductHandler(productUseCase, logger)
+
+		provinceCityUseCase = usecase.NewProvinceCityUseCase(logger)
+		provinceCityHandler = handler.NewProvinceCityHandler(provinceCityUseCase, logger)
 	)
 
 	app.Get("/api/ping!", func(c *fiber.Ctx) error {
@@ -62,6 +73,9 @@ func main() {
 	route.RegisterTokoRoute(app, tokoHandler, auth)
 	route.RegisterCategoryRoute(app, categoryHandler, auth)
 	route.RegisterAddressRoute(app, addressHandler, auth)
+	route.RegisterProductRoute(app, productHandler, auth)
+	route.NewRegisterProductPhotoRoute(app, photoHandler, auth)
+	route.NewRegisterProvinceCityRoute(app, provinceCityHandler, auth)
 
 	go func() {
 		if err := app.Listen(fmt.Sprintf(":%v", port)); err != nil {
