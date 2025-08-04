@@ -1,0 +1,3886 @@
+{
+	"info": {
+		"_postman_id": "51ae6f6b-b1db-4bf1-ae58-0828bf0e392f",
+		"name": "Virtual Internship Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46490085",
+		"_collection_link": "https://interstellar-shadow-3377854.postman.co/workspace/Hendri-A.'s-Workspace~2256c505-b433-402f-800b-6c7a57120536/collection/46490085-51ae6f6b-b1db-4bf1-ae58-0828bf0e392f?action=share&source=collection_link&creator=46490085"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hendri@example.com\",\r\n    \"kata_sandi\": \"hendri123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/login",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login (success)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"hendri@example.com\",\r\n    \"kata_sandi\": \"hendri1232\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/login",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:02:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbmRyaUBleGFtcGxlLmNvbSIsImV4cCI6MTc1Mzk0MTczNCwiaWQiOjEsImlzX2FkbWluIjp0cnVlLCJuYW1hIjoiSGVuZHJpIEFscW9yaSIsIm5vX3RlbHAiOiIwODEyMzQ1Njc4OTEwIn0.dHDa9w2zsoTvdfWTp6q_1Gj1xvj3ZCiBp3tQfvLIH4E\"\n    }\n}"
+						},
+						{
+							"name": "Login (not found)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"hendri@exampe.com\",\r\n    \"kata_sandi\": \"hendri123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/login",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:04:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"data is not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Hendri Alqori\",\r\n    \"email\": \"hen@example.com\",\r\n    \"kata_sandi\": \"hendri123\",\r\n    \"no_telp\": \"0812213223\",\r\n    \"tanggal_lahir\": \"2000-07-29\",\r\n    \"jenis_kelamin\": \"Laki-Laki\",\r\n    \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\r\n    \"pekerjaan\": \"Software Engineer\",\r\n    \"id_provinsi\": \"61\",\r\n    \"id_kota\": \"6103\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/register",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register (ok)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"Hendri Alqori 02\",\r\n    \"email\": \"hendri02@example.com\",\r\n    \"kata_sandi\": \"hendri123\",\r\n    \"no_telp\": \"0812211221\",\r\n    \"tanggal_lahir\": \"2000-07-29\",\r\n    \"jenis_kelamin\": \"Laki-Laki\",\r\n    \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\r\n    \"pekerjaan\": \"Software Engineer\",\r\n    \"id_provinsi\": \"ID-JK\",\r\n    \"id_kota\": \"ID-JKT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/register",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:07:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "465"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"nama\": \"Hendri Alqori 02\",\n        \"no_telp\": \"0812211221\",\n        \"tanggal_lahir\": \"2000-07-29\",\n        \"jenis_kelamin\": \"Laki-Laki\",\n        \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\n        \"pekerjaan\": \"Software Engineer\",\n        \"email\": \"hendri02@example.com\",\n        \"id_provinsi\": \"ID-JK\",\n        \"id_kota\": \"ID-JKT\",\n        \"is_admin\": true,\n        \"toko\": null,\n        \"created_at\": \"2025-07-31T11:07:09.581+07:00\",\n        \"updated_at\": \"2025-07-31T11:07:09.581+07:00\"\n    }\n}"
+						},
+						{
+							"name": "register (data already exists)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\": \"Hendri Alqori\",\r\n    \"email\": \"hendri@example.com\",\r\n    \"kata_sandi\": \"hendri123\",\r\n    \"no_telp\": \"0812345678910\",\r\n    \"tanggal_lahir\": \"2000-07-29\",\r\n    \"jenis_kelamin\": \"Laki-Laki\",\r\n    \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\r\n    \"pekerjaan\": \"Software Engineer\",\r\n    \"id_provinsi\": \"ID-JK\",\r\n    \"id_kota\": \"ID-JKT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/register",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:05:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"data already exists\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Alamat Kirim",
+					"item": [
+						{
+							"name": "Get My Alamat",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/user/alamat",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user",
+										"alamat"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get My Alamat (ok)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 10:13:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "591"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved all addresses\",\n    \"data\": [\n        {\n            \"id\": 6,\n            \"judul_alamat\": \"New Ricardo EDIT LAGI\",\n            \"nama_penerima\": \"Frederick Hodkiewicz\",\n            \"no_telp\": \"0812213223\",\n            \"detail_alamat\": \"Schultz Dale, 314 Dach Station, East Emmie\",\n            \"created_at\": \"2025-07-31T17:11:46.959+07:00\",\n            \"updated_at\": \"2025-07-31T17:13:02.488+07:00\"\n        },\n        {\n            \"id\": 7,\n            \"judul_alamat\": \"South Theodoratown\",\n            \"nama_penerima\": \"Dianne Halvorson\",\n            \"no_telp\": \"0812213223\",\n            \"detail_alamat\": \"Emard Avenue, 291 Karson Inlet, Dooleystad\",\n            \"created_at\": \"2025-07-31T17:13:09.112+07:00\",\n            \"updated_at\": \"2025-07-31T17:13:09.112+07:00\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Get My Alamat (unauthorized)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 13:31:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "48"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Alamat By ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user",
+										"alamat",
+										":id_alamat"
+									],
+									"variable": [
+										{
+											"key": "id_alamat",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Alamat By ID (ok)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat",
+												":id_alamat"
+											],
+											"variable": [
+												{
+													"key": "id_alamat",
+													"value": "6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 10:13:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "325"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Address found successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"judul_alamat\": \"New Ricardo EDIT LAGI\",\n        \"nama_penerima\": \"Frederick Hodkiewicz\",\n        \"no_telp\": \"0812213223\",\n        \"detail_alamat\": \"Schultz Dale, 314 Dach Station, East Emmie\",\n        \"created_at\": \"2025-07-31T17:11:46.959+07:00\",\n        \"updated_at\": \"2025-07-31T17:13:02.488+07:00\"\n    }\n}"
+								},
+								{
+									"name": "Get Alamat By ID (unauthorized)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat",
+												":id_alamat"
+											],
+											"variable": [
+												{
+													"key": "id_alamat",
+													"value": "6"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 13:32:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "48"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Post Alamat",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_alamat\":\"{{$randomCity}}\",\r\n    \"nama_penerima\":\"{{$randomFullName}}\",\r\n    \"no_telp\":\"0812213223\",\r\n    \"detail_alamat\":\"{{$randomStreetName}}, {{$randomStreetAddress}}, {{$randomCity}}\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/user/alamat",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user",
+										"alamat"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Post Alamat (ok)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"judul_alamat\":\"{{$randomCity}}\",\r\n    \"nama_penerima\":\"{{$randomFullName}}\",\r\n    \"no_telp\":\"0812213223\",\r\n    \"detail_alamat\":\"{{$randomStreetName}}, {{$randomStreetAddress}}, {{$randomCity}}\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 10:13:08 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "320"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Address created successfully\",\n    \"data\": {\n        \"id\": 7,\n        \"judul_alamat\": \"South Theodoratown\",\n        \"nama_penerima\": \"Dianne Halvorson\",\n        \"no_telp\": \"0812213223\",\n        \"detail_alamat\": \"Emard Avenue, 291 Karson Inlet, Dooleystad\",\n        \"created_at\": \"2025-07-31T17:13:09.112+07:00\",\n        \"updated_at\": \"2025-07-31T17:13:09.112+07:00\"\n    }\n}"
+								},
+								{
+									"name": "Post Alamat (unauthorized)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"judul_alamat\":\"{{$randomCity}}\",\r\n    \"nama_penerima\":\"{{$randomFullName}}\",\r\n    \"no_telp\":\"0812213223\",\r\n    \"detail_alamat\":\"{{$randomStreetName}}, {{$randomStreetAddress}}, {{$randomCity}}\"\r\n\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 13:32:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "48"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Alamat By ID",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul_alamat\":\"{{$randomCity}} EDIT LAGI\",\r\n    \"nama_penerima\":\"{{$randomFullName}}\",\r\n    \"no_telp\":\"0812213223\",\r\n    \"detail_alamat\":\"{{$randomStreetName}}, {{$randomStreetAddress}}, {{$randomCity}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user",
+										"alamat",
+										":id_alamat"
+									],
+									"variable": [
+										{
+											"key": "id_alamat",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Alamat By ID (ok)",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"judul_alamat\":\"{{$randomCity}} EDIT LAGI\",\r\n    \"nama_penerima\":\"{{$randomFullName}}\",\r\n    \"no_telp\":\"0812213223\",\r\n    \"detail_alamat\":\"{{$randomStreetName}}, {{$randomStreetAddress}}, {{$randomCity}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat",
+												":id_alamat"
+											],
+											"variable": [
+												{
+													"key": "id_alamat",
+													"value": "6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 10:13:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "309"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Address updated successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"judul_alamat\": \"New Ricardo EDIT LAGI\",\n        \"nama_penerima\": \"Frederick Hodkiewicz\",\n        \"no_telp\": \"0812213223\",\n        \"detail_alamat\": \"Schultz Dale, 314 Dach Station, East Emmie\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+								},
+								{
+									"name": "Update Alamat By ID (unauthorized)",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"judul_alamat\":\"{{$randomCity}} EDIT LAGI\",\r\n    \"nama_penerima\":\"{{$randomFullName}}\",\r\n    \"no_telp\":\"0812213223\",\r\n    \"detail_alamat\":\"{{$randomStreetName}}, {{$randomStreetAddress}}, {{$randomCity}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat",
+												":id_alamat"
+											],
+											"variable": [
+												{
+													"key": "id_alamat",
+													"value": "6"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 13:32:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "48"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Alamat By ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_toko",
+											"value": "Toko Sembako hendri alqori",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (4).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user",
+										"alamat",
+										":id_alamat"
+									],
+									"variable": [
+										{
+											"key": "id_alamat",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Alamat By ID (ok)",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "nama_toko",
+													"value": "Toko Sembako hendri alqori",
+													"type": "text"
+												},
+												{
+													"key": "files",
+													"type": "file",
+													"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (4).jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat",
+												":id_alamat"
+											],
+											"variable": [
+												{
+													"key": "id_alamat",
+													"value": "6"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 10:16:22 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "71"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Address deleted successfully\",\n    \"data\": null\n}"
+								},
+								{
+									"name": "Delete Alamat By ID (unauthorized)",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "nama_toko",
+													"value": "Toko Sembako hendri alqori",
+													"type": "text"
+												},
+												{
+													"key": "files",
+													"type": "file",
+													"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (4).jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/user/alamat/:id_alamat",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"user",
+												"alamat",
+												":id_alamat"
+											],
+											"variable": [
+												{
+													"key": "id_alamat",
+													"value": "6"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Thu, 31 Jul 2025 13:33:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "48"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get My Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/user",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get My Profile (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/user",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:12:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "813"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Current user retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"nama\": \"Hendri Alqori ganteng\",\n        \"no_telp\": \"0812345678910\",\n        \"tanggal_lahir\": \"2000-07-29T00:00:00+07:00\",\n        \"jenis_kelamin\": \"Laki-Laki\",\n        \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\n        \"pekerjaan\": \"Software Engineer\",\n        \"email\": \"hendri@example.com\",\n        \"id_provinsi\": \"ID-JK\",\n        \"id_kota\": \"ID-JKT\",\n        \"is_admin\": true,\n        \"toko\": {\n            \"id\": 1,\n            \"nama_toko\": \"Toko Sembako hendri alqori\",\n            \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753936671/toko/Gambar%20WhatsApp%202025-07-30%20pukul%2021.54.58_5868712b%20%284%29.jpg.jpg?w=500&h=500&c_fill\",\n            \"created_at\": \"2025-07-30T17:41:15.469+07:00\",\n            \"updated_at\": \"2025-07-31T11:43:12.385+07:00\"\n        },\n        \"created_at\": \"2025-07-30T17:41:15.466+07:00\",\n        \"updated_at\": \"2025-07-31T11:36:08.16+07:00\"\n    }\n}"
+						},
+						{
+							"name": "Get My Profile (unauthorized)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/user",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 13:33:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nama\": \"Hendri Alqori ganteng\",\r\n        \"no_telp\": \"0812345678910\",\r\n        \"tanggal_lahir\": \"2000-07-29\",\r\n        \"jenis_kelamin\": \"Laki-Laki\",\r\n        \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\r\n        \"pekerjaan\": \"Software Engineer\",\r\n        \"email\": \"hendri@example.com\",\r\n        \"id_provinsi\": \"ID-JK\",\r\n        \"id_kota\": \"ID-JKT\",\r\n        \"is_admin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/user",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update profile (ok)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nama\": \"Hendri Alqori ganteng\",\r\n        \"no_telp\": \"0812345678910\",\r\n        \"tanggal_lahir\": \"2000-07-29\",\r\n        \"jenis_kelamin\": \"Laki-Laki\",\r\n        \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\r\n        \"pekerjaan\": \"Software Engineer\",\r\n        \"email\": \"hendri@example.com\",\r\n        \"id_provinsi\": \"ID-JK\",\r\n        \"id_kota\": \"ID-JKT\",\r\n        \"is_admin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/user",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:36:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "467"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"nama\": \"Hendri Alqori ganteng\",\n        \"no_telp\": \"0812345678910\",\n        \"tanggal_lahir\": \"2000-07-29\",\n        \"jenis_kelamin\": \"Laki-Laki\",\n        \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\n        \"pekerjaan\": \"Software Engineer\",\n        \"email\": \"hendri@example.com\",\n        \"id_provinsi\": \"ID-JK\",\n        \"id_kota\": \"ID-JKT\",\n        \"is_admin\": true,\n        \"toko\": null,\n        \"created_at\": \"2025-07-30T17:41:15.466+07:00\",\n        \"updated_at\": \"2025-07-31T11:36:08.16+07:00\"\n    }\n}"
+						},
+						{
+							"name": "Update profile (unauthorized)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"nama\": \"Hendri Alqori ganteng\",\r\n        \"no_telp\": \"0812345678910\",\r\n        \"tanggal_lahir\": \"2000-07-29\",\r\n        \"jenis_kelamin\": \"Laki-Laki\",\r\n        \"tentang\": \"Seorang pengembang perangkat lunak yang antusias.\",\r\n        \"pekerjaan\": \"Software Engineer\",\r\n        \"email\": \"hendri@example.com\",\r\n        \"id_provinsi\": \"ID-JK\",\r\n        \"id_kota\": \"ID-JKT\",\r\n        \"is_admin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/user",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 13:34:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Toko",
+			"item": [
+				{
+					"name": "Get My Toko",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/toko/my",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"toko",
+								"my"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get My Toko (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/my",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:02:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "348"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved current toko\",\n    \"data\": {\n        \"id\": 1,\n        \"id_user\": 1,\n        \"nama_toko\": \"Toko Hendri Alqori edit\",\n        \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753883080/toko/alamak.webp.webp?w=500&h=500&c_fill\",\n        \"created_at\": \"2025-07-30T17:41:15.469+07:00\",\n        \"updated_at\": \"2025-07-30T20:52:55.978+07:00\"\n    }\n}"
+						},
+						{
+							"name": "Get My Toko (unauthorized)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/my",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										"my"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 13:35:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile Toko",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_toko",
+									"value": "Toko Sembako hendri alqori",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (2).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/toko/:id_toko",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"toko",
+								":id_toko"
+							],
+							"variable": [
+								{
+									"key": "id_toko",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Profile Toko (ok)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_toko",
+											"value": "Toko Sembako hendri alqori",
+											"type": "text"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (4).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/:id_toko",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										":id_toko"
+									],
+									"variable": [
+										{
+											"key": "id_toko",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:37:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "383"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully updated toko\",\n    \"data\": {\n        \"id\": 1,\n        \"id_user\": 1,\n        \"nama_toko\": \"Toko Sembako hendri alqori\",\n        \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753936671/toko/Gambar%20WhatsApp%202025-07-30%20pukul%2021.54.58_5868712b%20%284%29.jpg.jpg?w=500&h=500&c_fill\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Profile Toko (invalid)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_toko",
+											"value": "Toko Sembako hendri alqori",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (4).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/:id_toko",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										":id_toko"
+									],
+									"variable": [
+										{
+											"key": "id_toko",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:43:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"there is no uploaded file associated with the given key\"\n}"
+						},
+						{
+							"name": "Update Profile Toko",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_toko",
+											"value": "Toko Sembako hendri alqori",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (4).jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/:id_toko",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										":id_toko"
+									],
+									"variable": [
+										{
+											"key": "id_toko",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 13:35:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Toko",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/toko?limit=5&page=1&nama=",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"toko"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "nama",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Toko (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/toko?limit=5&page=1&nama=",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "nama",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:11:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "540"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved all tokos\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"id_user\": 1,\n            \"nama_toko\": \"Toko Hendri Alqori edit\",\n            \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753883080/toko/alamak.webp.webp?w=500&h=500&c_fill\",\n            \"created_at\": \"2025-07-30T17:41:15.469+07:00\",\n            \"updated_at\": \"2025-07-30T20:52:55.978+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"id_user\": 3,\n            \"nama_toko\": \"Toko Hendri Alqori 02\",\n            \"url_foto\": \"\",\n            \"created_at\": \"2025-07-31T11:07:09.584+07:00\",\n            \"updated_at\": \"2025-07-31T11:07:09.584+07:00\"\n        }\n    ],\n    \"metadata\": {\n        \"page\": 1,\n        \"limit\": 5\n    }\n}"
+						},
+						{
+							"name": "Get All Toko (unauthorized)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/toko?limit=5&page=1&nama=",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "nama",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 13:35:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Toko By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/toko/:id_toko",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"toko",
+								":id_toko"
+							],
+							"variable": [
+								{
+									"key": "id_toko",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Toko By ID (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/:id_toko",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										":id_toko"
+									],
+									"variable": [
+										{
+											"key": "id_toko",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:11:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved toko by ID\",\n    \"data\": {\n        \"id\": 1,\n        \"id_user\": 1,\n        \"nama_toko\": \"Toko Hendri Alqori edit\",\n        \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753883080/toko/alamak.webp.webp?w=500&h=500&c_fill\",\n        \"created_at\": \"2025-07-30T17:41:15.469+07:00\",\n        \"updated_at\": \"2025-07-30T20:52:55.978+07:00\"\n    }\n}"
+						},
+						{
+							"name": "Get Toko By ID (not found)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/toko/:id_toko",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"toko",
+										":id_toko"
+									],
+									"variable": [
+										{
+											"key": "id_toko",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:11:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"data is not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/category",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Category (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:29:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved all categories\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"nama_kategori\": \"BAHAN_POKOK_EDIT\",\n            \"created_at\": \"2025-07-31T11:19:09.141+07:00\",\n            \"updated_at\": \"2025-07-31T11:29:04.423+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"nama_kategori\": \"PAKAIAN\",\n            \"created_at\": \"2025-07-31T11:23:35.754+07:00\",\n            \"updated_at\": \"2025-07-31T11:23:35.754+07:00\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get All Category (unauthorized)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 03:57:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"User unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Category By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/category/:id_category",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"category",
+								":id_category"
+							],
+							"variable": [
+								{
+									"key": "id_category",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Category By ID (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:30:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Category found successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"nama_kategori\": \"PAKAIAN\",\n        \"created_at\": \"2025-07-31T11:23:35.754+07:00\",\n        \"updated_at\": \"2025-07-31T11:23:35.754+07:00\"\n    }\n}"
+						},
+						{
+							"name": "Get Category By ID (invalid)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": "fefwef"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:17:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid category ID\"\n}"
+						},
+						{
+							"name": "Get Category By ID (not found)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:18:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"data is not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_kategori\": \"CELANA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/category",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Category (ok)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_kategori\": \"BAHAN_POKOK\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:19:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"nama_kategori\": \"BAHAN_POKOK\",\n        \"created_at\": \"2025-07-31T11:19:09.141+07:00\",\n        \"updated_at\": \"2025-07-31T11:19:09.141+07:00\"\n    }\n}"
+						},
+						{
+							"name": "Post Category (invalid)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_kategori\": 122121\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:22:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid request body\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Category By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_kategori\": \"CELANA_EDIT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/category/:id_category",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"category",
+								":id_category"
+							],
+							"variable": [
+								{
+									"key": "id_category",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Category By ID (ok)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_kategori\": \"BAHAN_POKOK_EDIT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:29:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "183"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"nama_kategori\": \"BAHAN_POKOK_EDIT\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Category By ID (invalid)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama_kategori\": \"BAHAN_POKOK_EDIT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": "fsdfsd"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:28:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid category ID\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Category By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_toko",
+									"value": "Toko Hendri Alqori edit",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/MSI/Downloads/alamak.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/category/:id_category",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"category",
+								":id_category"
+							],
+							"variable": [
+								{
+									"key": "id_category",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Category By ID (ok)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_toko",
+											"value": "Toko Hendri Alqori edit",
+											"type": "text"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/alamak.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:33:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Category deleted successfully\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Delete Category By ID (invalid)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_toko",
+											"value": "Toko Hendri Alqori edit",
+											"type": "text"
+										},
+										{
+											"key": "foto",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/alamak.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/category/:id_category",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"category",
+										":id_category"
+									],
+									"variable": [
+										{
+											"key": "id_category",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 31 Jul 2025 04:30:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid category ID\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Foto",
+					"item": [
+						{
+							"name": "Post Foto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id_produk",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/Untitled-2024-02-02-0911.png"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/C:/Users/MSI/Downloads/loop.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/product/foto",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product",
+										"foto"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Post Foto (ok)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "id_produk",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "files",
+													"type": "file",
+													"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_5868712b (2).jpg"
+												},
+												{
+													"key": "files",
+													"type": "file",
+													"src": "/C:/Users/MSI/Downloads/Gambar WhatsApp 2025-07-30 pukul 21.54.58_be575bba.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/product/foto",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"product",
+												"foto"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 03 Aug 2025 03:47:27 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "76"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Upload photo product successfully\",\n    \"data\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Foto By ID",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_produk",
+											"value": "{{$randomProductName}} edit",
+											"type": "text"
+										},
+										{
+											"key": "id_category",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "harga_reseller",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "harga_konsumen",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "stok",
+											"value": "{{$randomInt}}",
+											"type": "text"
+										},
+										{
+											"key": "deskripsi",
+											"value": "{{$randomLoremSentences}}",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/home/ahmad-fajar/Pictures/gorm.png",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/home/ahmad-fajar/Pictures/samurai wallpaper 2.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/product/foto/:id_foto",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product",
+										"foto",
+										":id_foto"
+									],
+									"variable": [
+										{
+											"key": "id_foto",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request (ok)",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "nama_produk",
+													"value": "{{$randomProductName}} edit",
+													"type": "text"
+												},
+												{
+													"key": "id_category",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "harga_reseller",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "harga_konsumen",
+													"value": "2000",
+													"type": "text"
+												},
+												{
+													"key": "stok",
+													"value": "{{$randomInt}}",
+													"type": "text"
+												},
+												{
+													"key": "deskripsi",
+													"value": "{{$randomLoremSentences}}",
+													"type": "text"
+												},
+												{
+													"key": "photos",
+													"type": "file",
+													"src": "/home/ahmad-fajar/Pictures/gorm.png",
+													"disabled": true
+												},
+												{
+													"key": "photos",
+													"type": "file",
+													"src": "/home/ahmad-fajar/Pictures/samurai wallpaper 2.jpg",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{ENDPOINT}}/product/foto/:id_foto",
+											"host": [
+												"{{ENDPOINT}}"
+											],
+											"path": [
+												"product",
+												"foto",
+												":id_foto"
+											],
+											"variable": [
+												{
+													"key": "id_foto",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 03 Aug 2025 04:32:49 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Content-Length",
+											"value": "68"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Foto deleted successfully\",\n    \"data\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get All Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/product?page=1&limit=5",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "nama_produk",
+									"value": "Small",
+									"disabled": true
+								},
+								{
+									"key": "min_harga",
+									"value": "10000",
+									"disabled": true
+								},
+								{
+									"key": "max_harga",
+									"value": "500000",
+									"disabled": true
+								},
+								{
+									"key": "id_toko",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "id_category",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Product (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/product?page=1&limit=5&nama_produk=Small",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "5"
+										},
+										{
+											"key": "nama_produk",
+											"value": "Small"
+										},
+										{
+											"key": "min_harga",
+											"value": "10000",
+											"disabled": true
+										},
+										{
+											"key": "max_harga",
+											"value": "500000",
+											"disabled": true
+										},
+										{
+											"key": "id_toko",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "id_category",
+											"value": "3",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 12:46:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "529"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Products fetched successfully\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"nama_produk\": \"Small Rubber Pizza\",\n            \"slug\": \"small-rubber-pizza\",\n            \"harga_reseller\": 1000,\n            \"harga_konsumen\": 2000,\n            \"stok\": 205,\n            \"deskripsi\": \"Vero recusandae numquam. Harum qui provident laudantium officiis quasi.\",\n            \"created_at\": \"2025-08-01T17:09:13.373+07:00\",\n            \"updated_at\": \"2025-08-01T17:09:13.373+07:00\",\n            \"category\": {\n                \"id\": 3,\n                \"nama_kategori\": \"PAKAIAN\"\n            },\n            \"toko\": {\n                \"id\": 1,\n                \"nama_toko\": \"Toko Sembako hendri alqori\"\n            }\n        }\n    ],\n    \"metadata\": {\n        \"page\": 1,\n        \"limit\": 5,\n        \"nama_produk\": \"Small\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/product/:id_product",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"product",
+								":id_product"
+							],
+							"variable": [
+								{
+									"key": "id_product",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Product By ID (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/product/:id_product",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product",
+										":id_product"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 12:51:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "472"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Product fetched successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"nama_produk\": \"Small Rubber Pizza\",\n        \"slug\": \"small-rubber-pizza\",\n        \"harga_reseller\": 1000,\n        \"harga_konsumen\": 2000,\n        \"stok\": 205,\n        \"deskripsi\": \"Vero recusandae numquam. Harum qui provident laudantium officiis quasi.\",\n        \"created_at\": \"2025-08-01T17:09:13.373+07:00\",\n        \"updated_at\": \"2025-08-01T17:09:13.373+07:00\",\n        \"category\": {\n            \"id\": 3,\n            \"nama_kategori\": \"PAKAIAN\"\n        },\n        \"toko\": {\n            \"id\": 1,\n            \"nama_toko\": \"Toko Sembako hendri alqori\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Get Product By ID (invalid)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/product/:id_product",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product",
+										":id_product"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 12:51:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid product ID\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_produk",
+									"value": "{{$randomProductName}}",
+									"type": "text"
+								},
+								{
+									"key": "id_category",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "harga_reseller",
+									"value": "6000",
+									"type": "text"
+								},
+								{
+									"key": "harga_konsumen",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "stok",
+									"value": "{{$randomInt}}",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "{{$randomLoremSentences}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/product",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Product (duplicate)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_produk",
+											"value": "{{$randomProductName}}",
+											"type": "text"
+										},
+										{
+											"key": "id_category",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "harga_reseller",
+											"value": "6000",
+											"type": "text"
+										},
+										{
+											"key": "harga_konsumen",
+											"value": "10000",
+											"type": "text"
+										},
+										{
+											"key": "stok",
+											"value": "{{$randomInt}}",
+											"type": "text"
+										},
+										{
+											"key": "deskripsi",
+											"value": "{{$randomLoremSentences}}",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/home/ahmad-fajar/Pictures/gorm.png",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/home/ahmad-fajar/Pictures/samurai wallpaper 2.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/product",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 12:52:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Error 1062 (23000): Duplicate entry '3' for key 'products.uni_products_id_category'\"\n}"
+						},
+						{
+							"name": "Post Product (ok)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_produk",
+											"value": "{{$randomProductName}}",
+											"type": "text"
+										},
+										{
+											"key": "id_category",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "harga_reseller",
+											"value": "6000",
+											"type": "text"
+										},
+										{
+											"key": "harga_konsumen",
+											"value": "10000",
+											"type": "text"
+										},
+										{
+											"key": "stok",
+											"value": "{{$randomInt}}",
+											"type": "text"
+										},
+										{
+											"key": "deskripsi",
+											"value": "{{$randomLoremSentences}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/product",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 04 Aug 2025 16:07:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "419"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"nama_produk\": \"Fantastic Plastic Towels\",\n        \"slug\": \"fantastic-plastic-towels\",\n        \"harga_reseller\": 6000,\n        \"harga_konsumen\": 10000,\n        \"stok\": 955,\n        \"deskripsi\": \"Modi asperiores qui animi qui. Maiores reprehenderit ab ullam ab perspiciatis tempora. Expedita omnis ullam.\",\n        \"created_at\": \"2025-08-04T23:07:41.321+07:00\",\n        \"updated_at\": \"2025-08-04T23:07:41.321+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_produk",
+									"value": "{{$randomProductName}} edit",
+									"type": "text"
+								},
+								{
+									"key": "id_category",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "harga_reseller",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "harga_konsumen",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stok",
+									"value": "{{$randomInt}}",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "{{$randomLoremSentences}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/product/:id_product",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"product",
+								":id_product"
+							],
+							"variable": [
+								{
+									"key": "id_product",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product By ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "nama_produk",
+											"value": "{{$randomProductName}} edit",
+											"type": "text"
+										},
+										{
+											"key": "id_category",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "harga_reseller",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "harga_konsumen",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "stok",
+											"value": "{{$randomInt}}",
+											"type": "text"
+										},
+										{
+											"key": "deskripsi",
+											"value": "{{$randomLoremSentences}}",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/home/ahmad-fajar/Pictures/gorm.png",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": "/home/ahmad-fajar/Pictures/samurai wallpaper 2.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{ENDPOINT}}/product/:id_product",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"product",
+										":id_product"
+									],
+									"variable": [
+										{
+											"key": "id_product",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 02 Aug 2025 09:47:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "450"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"nama_produk\": \"Gorgeous Wooden Tuna edit\",\n        \"slug\": \"gorgeous-wooden-tuna-edit\",\n        \"harga_reseller\": 1000,\n        \"harga_konsumen\": 2000,\n        \"stok\": 754,\n        \"deskripsi\": \"Culpa eum aliquid et adipisci doloremque error. Deleniti et aspernatur. Molestias sit cum. Doloribus hic debitis. Et eveniet sed consequatur soluta fuga et.\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"0001-01-01T00:00:00Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_produk",
+									"value": "{{$randomProductName}}",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "harga_reseller",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "harga_konsumen",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stok",
+									"value": "{{$randomInt}}",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "{{$randomLoremSentences}}",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/home/ahmad-fajar/Pictures/gorm.png",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/home/ahmad-fajar/Pictures/samurai wallpaper 2.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/product/:id",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trx",
+			"item": [
+				{
+					"name": "Get All Trx",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/trx",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"trx"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Trx (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/trx",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"trx"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 04 Aug 2025 15:19:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2379"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved all transaction\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"id_user\": 1,\n            \"harga_total\": 10000,\n            \"kode_invoice\": \"INVOICE-1754307003094\",\n            \"method_bayar\": \"QRIS\",\n            \"alamat_kirim\": {\n                \"id\": 1,\n                \"judul_alamat\": \"West Corbin EDIT LAGI\",\n                \"nama_penerima\": \"Joe Greenfelder\",\n                \"no_telp\": \"0812213223\",\n                \"detail_alamat\": \"Leone Pine, 28974 Tabitha Track, Mullerview\"\n            },\n            \"created_at\": \"2025-08-04T18:30:03.095+07:00\",\n            \"updated_at\": \"2025-08-04T18:30:03.095+07:00\",\n            \"detail_trx\": [\n                {\n                    \"id\": 1,\n                    \"kuantitas\": 1,\n                    \"harga_total\": 10000,\n                    \"product\": {\n                        \"id\": 1,\n                        \"nama_produk\": \"Refined Fresh Bike\",\n                        \"slug\": \"refined-fresh-bike\",\n                        \"harga_reseller\": 6000,\n                        \"harga_konsumen\": 10000,\n                        \"deskripsi\": \"Consequatur nemo aliquid earum et error et. Molestiae facilis quas aut assumenda id expedita reiciendis. Nemo doloribus nihil quis cum nam facilis est quia eius. Nostrum aut molestias. Fugit quia neque impedit quia perferendis.\",\n                        \"category\": {\n                            \"id\": 1,\n                            \"nama_category\": \"CELANA_EDIT\"\n                        }\n                    },\n                    \"toko\": {\n                        \"id\": 1,\n                        \"nama_toko\": \"Toko Sembako hendri alqori\",\n                        \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753936653/toko/Gambar%20WhatsApp%202025-07-30%20pukul%2021.54.58_5868712b%20%282%29.jpg.jpg?w=500&h=500&c_fill\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"id_user\": 1,\n            \"harga_total\": 10000,\n            \"kode_invoice\": \"INVOICE-1754320783566\",\n            \"method_bayar\": \"QRIS\",\n            \"alamat_kirim\": {\n                \"id\": 1,\n                \"judul_alamat\": \"West Corbin EDIT LAGI\",\n                \"nama_penerima\": \"Joe Greenfelder\",\n                \"no_telp\": \"0812213223\",\n                \"detail_alamat\": \"Leone Pine, 28974 Tabitha Track, Mullerview\"\n            },\n            \"created_at\": \"2025-08-04T22:19:43.567+07:00\",\n            \"updated_at\": \"2025-08-04T22:19:43.567+07:00\",\n            \"detail_trx\": [\n                {\n                    \"id\": 2,\n                    \"kuantitas\": 1,\n                    \"harga_total\": 10000,\n                    \"product\": {\n                        \"id\": 4,\n                        \"nama_produk\": \"Handcrafted Rubber Mouse\",\n                        \"slug\": \"handcrafted-rubber-mouse\",\n                        \"harga_reseller\": 6000,\n                        \"harga_konsumen\": 10000,\n                        \"deskripsi\": \"Provident molestias alias dicta deleniti aut vel et modi error. Nihil tempore beatae praesentium dolorem sed pariatur qui. Ut velit hic non omnis excepturi nisi voluptate ea. Id tempora vel labore quas mollitia voluptas quam incidunt. Asperiores eos similique sapiente eaque tenetur accusamus et. Numquam a nesciunt aut non aut.\",\n                        \"category\": {\n                            \"id\": 1,\n                            \"nama_category\": \"CELANA_EDIT\"\n                        }\n                    },\n                    \"toko\": {\n                        \"id\": 1,\n                        \"nama_toko\": \"Toko Sembako hendri alqori\",\n                        \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753936653/toko/Gambar%20WhatsApp%202025-07-30%20pukul%2021.54.58_5868712b%20%282%29.jpg.jpg?w=500&h=500&c_fill\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Trx By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/trx/:id_trx",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"trx",
+								":id_trx"
+							],
+							"variable": [
+								{
+									"key": "id_trx",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Trx By ID (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/trx/:id_trx",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"trx",
+										":id_trx"
+									],
+									"variable": [
+										{
+											"key": "id_trx",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 04 Aug 2025 15:30:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1172"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved transations by ID\",\n    \"data\": {\n        \"id\": 1,\n        \"id_user\": 1,\n        \"harga_total\": 10000,\n        \"kode_invoice\": \"INVOICE-1754307003094\",\n        \"method_bayar\": \"QRIS\",\n        \"alamat_kirim\": {\n            \"id\": 1,\n            \"judul_alamat\": \"West Corbin EDIT LAGI\",\n            \"nama_penerima\": \"Joe Greenfelder\",\n            \"no_telp\": \"0812213223\",\n            \"detail_alamat\": \"Leone Pine, 28974 Tabitha Track, Mullerview\"\n        },\n        \"created_at\": \"2025-08-04T18:30:03.095+07:00\",\n        \"updated_at\": \"2025-08-04T18:30:03.095+07:00\",\n        \"detail_trx\": [\n            {\n                \"id\": 1,\n                \"kuantitas\": 1,\n                \"harga_total\": 10000,\n                \"product\": {\n                    \"id\": 1,\n                    \"nama_produk\": \"Refined Fresh Bike\",\n                    \"slug\": \"refined-fresh-bike\",\n                    \"harga_reseller\": 6000,\n                    \"harga_konsumen\": 10000,\n                    \"deskripsi\": \"Consequatur nemo aliquid earum et error et. Molestiae facilis quas aut assumenda id expedita reiciendis. Nemo doloribus nihil quis cum nam facilis est quia eius. Nostrum aut molestias. Fugit quia neque impedit quia perferendis.\",\n                    \"category\": {\n                        \"id\": 1,\n                        \"nama_category\": \"CELANA_EDIT\"\n                    }\n                },\n                \"toko\": {\n                    \"id\": 1,\n                    \"nama_toko\": \"Toko Sembako hendri alqori\",\n                    \"url_foto\": \"https://res.cloudinary.com/dbe2xsvgm/image/upload/v1753936653/toko/Gambar%20WhatsApp%202025-07-30%20pukul%2021.54.58_5868712b%20%282%29.jpg.jpg?w=500&h=500&c_fill\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Trx",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"method_bayar\":\"QRIS\",\r\n    \"alamat_kirim\":1,\r\n    \"detail_trx\":[\r\n        {\r\n            \"product_id\":3,\r\n            \"kuantitas\":1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ENDPOINT}}/trx",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"trx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Province City",
+			"item": [
+				{
+					"name": "Get List Province",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/provcity/listprovincies",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"provcity",
+								"listprovincies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List Province (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/provcity/listprovincies",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"provcity",
+										"listprovincies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 03 Aug 2025 09:35:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1240"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved data provices\",\n    \"data\": [\n        {\n            \"id\": \"11\",\n            \"name\": \"ACEH\"\n        },\n        {\n            \"id\": \"12\",\n            \"name\": \"SUMATERA UTARA\"\n        },\n        {\n            \"id\": \"13\",\n            \"name\": \"SUMATERA BARAT\"\n        },\n        {\n            \"id\": \"14\",\n            \"name\": \"RIAU\"\n        },\n        {\n            \"id\": \"15\",\n            \"name\": \"JAMBI\"\n        },\n        {\n            \"id\": \"16\",\n            \"name\": \"SUMATERA SELATAN\"\n        },\n        {\n            \"id\": \"17\",\n            \"name\": \"BENGKULU\"\n        },\n        {\n            \"id\": \"18\",\n            \"name\": \"LAMPUNG\"\n        },\n        {\n            \"id\": \"19\",\n            \"name\": \"KEPULAUAN BANGKA BELITUNG\"\n        },\n        {\n            \"id\": \"21\",\n            \"name\": \"KEPULAUAN RIAU\"\n        },\n        {\n            \"id\": \"31\",\n            \"name\": \"DKI JAKARTA\"\n        },\n        {\n            \"id\": \"32\",\n            \"name\": \"JAWA BARAT\"\n        },\n        {\n            \"id\": \"33\",\n            \"name\": \"JAWA TENGAH\"\n        },\n        {\n            \"id\": \"34\",\n            \"name\": \"DI YOGYAKARTA\"\n        },\n        {\n            \"id\": \"35\",\n            \"name\": \"JAWA TIMUR\"\n        },\n        {\n            \"id\": \"36\",\n            \"name\": \"BANTEN\"\n        },\n        {\n            \"id\": \"51\",\n            \"name\": \"BALI\"\n        },\n        {\n            \"id\": \"52\",\n            \"name\": \"NUSA TENGGARA BARAT\"\n        },\n        {\n            \"id\": \"53\",\n            \"name\": \"NUSA TENGGARA TIMUR\"\n        },\n        {\n            \"id\": \"61\",\n            \"name\": \"KALIMANTAN BARAT\"\n        },\n        {\n            \"id\": \"62\",\n            \"name\": \"KALIMANTAN TENGAH\"\n        },\n        {\n            \"id\": \"63\",\n            \"name\": \"KALIMANTAN SELATAN\"\n        },\n        {\n            \"id\": \"64\",\n            \"name\": \"KALIMANTAN TIMUR\"\n        },\n        {\n            \"id\": \"65\",\n            \"name\": \"KALIMANTAN UTARA\"\n        },\n        {\n            \"id\": \"71\",\n            \"name\": \"SULAWESI UTARA\"\n        },\n        {\n            \"id\": \"72\",\n            \"name\": \"SULAWESI TENGAH\"\n        },\n        {\n            \"id\": \"73\",\n            \"name\": \"SULAWESI SELATAN\"\n        },\n        {\n            \"id\": \"74\",\n            \"name\": \"SULAWESI TENGGARA\"\n        },\n        {\n            \"id\": \"75\",\n            \"name\": \"GORONTALO\"\n        },\n        {\n            \"id\": \"76\",\n            \"name\": \"SULAWESI BARAT\"\n        },\n        {\n            \"id\": \"81\",\n            \"name\": \"MALUKU\"\n        },\n        {\n            \"id\": \"82\",\n            \"name\": \"MALUKU UTARA\"\n        },\n        {\n            \"id\": \"91\",\n            \"name\": \"PAPUA BARAT\"\n        },\n        {\n            \"id\": \"94\",\n            \"name\": \"PAPUA\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get List City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/provcity/listcities/:prov_id",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"provcity",
+								"listcities",
+								":prov_id"
+							],
+							"variable": [
+								{
+									"key": "prov_id",
+									"value": "61"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List City (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/provcity/listcities/:prov_id",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"provcity",
+										"listcities",
+										":prov_id"
+									],
+									"variable": [
+										{
+											"key": "prov_id",
+											"value": "61"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 03 Aug 2025 14:48:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "924"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved data provices\",\n    \"data\": [\n        {\n            \"id\": \"6101\",\n            \"name\": \"KABUPATEN SAMBAS\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6102\",\n            \"name\": \"KABUPATEN BENGKAYANG\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6103\",\n            \"name\": \"KABUPATEN LANDAK\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6104\",\n            \"name\": \"KABUPATEN MEMPAWAH\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6105\",\n            \"name\": \"KABUPATEN SANGGAU\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6106\",\n            \"name\": \"KABUPATEN KETAPANG\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6107\",\n            \"name\": \"KABUPATEN SINTANG\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6108\",\n            \"name\": \"KABUPATEN KAPUAS HULU\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6109\",\n            \"name\": \"KABUPATEN SEKADAU\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6110\",\n            \"name\": \"KABUPATEN MELAWI\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6111\",\n            \"name\": \"KABUPATEN KAYONG UTARA\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6112\",\n            \"name\": \"KABUPATEN KUBU RAYA\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6171\",\n            \"name\": \"KOTA PONTIANAK\",\n            \"province_id\": \"61\"\n        },\n        {\n            \"id\": \"6172\",\n            \"name\": \"KOTA SINGKAWANG\",\n            \"province_id\": \"61\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Province",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/provcity/detailprovince/:prov_id",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"provcity",
+								"detailprovince",
+								":prov_id"
+							],
+							"variable": [
+								{
+									"key": "prov_id",
+									"value": "61"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Detail Province (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/provcity/detailprovince/:prov_id",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"provcity",
+										"detailprovince",
+										":prov_id"
+									],
+									"variable": [
+										{
+											"key": "prov_id",
+											"value": "61"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 03 Aug 2025 14:54:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved data provices\",\n    \"data\": {\n        \"id\": \"61\",\n        \"name\": \"KALIMANTAN BARAT\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail City",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/provcity/detailcity/:city_id",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"provcity",
+								"detailcity",
+								":city_id"
+							],
+							"variable": [
+								{
+									"key": "city_id",
+									"value": "6103"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Detail City (ok)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ENDPOINT}}/provcity/detailcity/:city_id",
+									"host": [
+										"{{ENDPOINT}}"
+									],
+									"path": [
+										"provcity",
+										"detailcity",
+										":city_id"
+									],
+									"variable": [
+										{
+											"key": "city_id",
+											"value": "6103"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 03 Aug 2025 15:04:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "133"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Successfully retrieved data provices\",\n    \"data\": {\n        \"id\": \"6103\",\n        \"name\": \"KABUPATEN LANDAK\",\n        \"province_id\": \"61\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PING!",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ENDPOINT}}/ping!",
+					"host": [
+						"{{ENDPOINT}}"
+					],
+					"path": [
+						"ping!"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PING!",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ENDPOINT}}/ping!",
+							"host": [
+								"{{ENDPOINT}}"
+							],
+							"path": [
+								"ping!"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 03 Aug 2025 15:05:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"message\": \"Welcome to the Internship Mini Project API\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbmRyaUBleGFtcGxlLmNvbSIsImV4cCI6MTc1NDMyODU4NiwiaWQiOjEsImlzX2FkbWluIjp0cnVlLCJuYW1hIjoiSGVuZHJpIEFscW9yaSIsIm5vX3RlbHAiOiIwODEyMzQ1Njc4OSIsInRva28iOnsiaWQiOjEsIm5hbWEiOiJUb2tvIFNlbWJha28gaGVuZHJpIGFscW9yaSIsInVybF9mb3RvIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZGJlMnhzdmdtL2ltYWdlL3VwbG9hZC92MTc1MzkzNjY1My90b2tvL0dhbWJhciUyMFdoYXRzQXBwJTIwMjAyNS0wNy0zMCUyMHB1a3VsJTIwMjEuNTQuNThfNTg2ODcxMmIlMjAlMjgyJTI5LmpwZy5qcGc_dz01MDBcdTAwMjZoPTUwMFx1MDAyNmNfZmlsbCJ9fQ.u6bDHaLeLLf6cZKUGRRSK8QPzVNvX1NOtGwo8HdKtyQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
