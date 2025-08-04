@@ -3,13 +3,13 @@ package model
 import "time"
 
 type AddressResponse struct {
-	ID           uint      `json:"id"`
-	JudulAlamat  string    `json:"judul_alamat"`
-	NamaPenerima string    `json:"nama_penerima"`
-	NoTelp       string    `json:"no_telp"`
-	DetailAlamat string    `json:"detail_alamat"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	ID           uint       `json:"id"`
+	JudulAlamat  string     `json:"judul_alamat"`
+	NamaPenerima string     `json:"nama_penerima"`
+	NoTelp       string     `json:"no_telp"`
+	DetailAlamat string     `json:"detail_alamat"`
+	CreatedAt    *time.Time `json:"created_at,omitempty"`
+	UpdatedAt    *time.Time `json:"updated_at,omitempty"`
 }
 
 type CreateAddressRequest struct {

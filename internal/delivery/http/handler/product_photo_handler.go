@@ -33,6 +33,10 @@ func (h *ProductPhotoHandler) Create(c *fiber.Ctx) error {
 
 	files := form.File["files"]
 
+	if len(files) == 0 {
+		return fiber.NewError(fiber.StatusBadRequest, "Cannot send empty file")
+	}
+
 	for _, file := range files {
 		src, err := file.Open()
 		if err != nil {

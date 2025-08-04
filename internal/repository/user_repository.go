@@ -11,10 +11,20 @@ type UserRepository interface {
 	Create(ctx context.Context, user *domain.User) error
 	Update(ctx context.Context, user *domain.User) error
 	FindByEmail(ctx context.Context, email string) (*domain.User, error)
+	CountByEmail(ctx context.Context, email string) (int64, error)
 }
 
 type UserRepositoryImpl struct {
 	DB *gorm.DB
+}
+
+// CountByEmail implements UserRepository.
+func (u *UserRepositoryImpl) CountByEmail(ctx context.Context, email string) (int64, error) {
+	var countUser int64
+	if err := u.DB.WithContext(ctx).Model(&domain.User{}).Where("email = ?", email).Count(&countUser).Error; err != nil {
+		return 0, err
+	}
+	return countUser, nil
 }
 
 // FindByEmail implements UserRepository.

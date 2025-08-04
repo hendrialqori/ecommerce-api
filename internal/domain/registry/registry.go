@@ -16,5 +16,8 @@ func RegistryModels() []Model {
 		{Model: domain.Address{}},
 		{Model: domain.Product{}},
 		{Model: domain.ProductPhoto{}},
+		{Model: domain.ProductLog{}},
+		{Model: domain.Transaction{}},
+		{Model: domain.TransactionDetail{}},
 	}
 }

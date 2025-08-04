@@ -14,11 +14,11 @@ type Product struct {
 	UpdatedAt     time.Time `gorm:"column:updated_at;autoUpdateTime" json:"updated_at"`
 
 	// Foreign keys
-	IDToko     uint `gorm:"column:id_toko;not null" json:"id_toko"`
-	IDCategory uint `gorm:"column:id_category;not null;unique" json:"id_category"`
+	IDToko     uint `gorm:"column:id_toko;" json:"id_toko"`
+	IDCategory uint `gorm:"column:id_category;" json:"id_category"`
 
 	// Relasi
-	Toko         *Toko           `gorm:"foreignKey:IDToko;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"toko,omitempty"`
-	Category     *Category       `gorm:"foreignKey:IDCategory;references:ID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE" json:"category,omitempty"`
+	Toko         *Toko           `gorm:"foreignKey:IDToko;references:ID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL" json:"toko,omitempty"`
+	Category     *Category       `gorm:"foreignKey:IDCategory;references:ID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL" json:"category,omitempty"`
 	ProductPhoto *[]ProductPhoto `gorm:"foreignKey:IDProduk" json:"foto,omitempty"`
 }

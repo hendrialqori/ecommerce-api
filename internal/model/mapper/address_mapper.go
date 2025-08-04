@@ -16,7 +16,7 @@ func ToAddressResponse(address *domain.Address) *model.AddressResponse {
 		NamaPenerima: address.NamaPenerima,
 		NoTelp:       address.NoTelp,
 		DetailAlamat: address.DetailAlamat,
-		CreatedAt:    address.CreatedAt,
-		UpdatedAt:    address.UpdatedAt,
+		CreatedAt:    &address.CreatedAt,
+		UpdatedAt:    &address.UpdatedAt,
 	}
 }

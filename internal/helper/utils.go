@@ -1,15 +1,11 @@
 package helper
 
 import (
-	"context"
-	"mime/multipart"
+	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
-
-	"github.com/cloudinary/cloudinary-go/v2"
-	"github.com/cloudinary/cloudinary-go/v2/api/uploader"
-	"github.com/gofiber/fiber/v2"
+	"time"
 )
 
 func ParseToInt(input string) (int, error) {
@@ -38,29 +34,8 @@ func ParseToSlug(input string) string {
 	return slug
 }
 
-func ParseQueryInt(c *fiber.Ctx, key string, defaultVal int) int {
-	if valStr := c.Query(key); valStr != "" {
-		if val, err := strconv.Atoi(valStr); err == nil && val > 0 {
-			return val
-		}
-	}
-	return defaultVal
-}
+func GenerateInvoice() string {
+	timestamp := time.Now().UnixMilli()
+	return fmt.Sprintf("INVOICE-%d", timestamp)
 
-func UploadFileToCloud(ctx context.Context, file multipart.File, filename, cloudinaryURL, folder string) (string, error) {
-	cld, err := cloudinary.NewFromURL(cloudinaryURL)
-	if err != nil {
-		return "", err
-	}
-
-	uploadParam := uploader.UploadParams{
-		PublicID: folder + "/" + filename,
-	}
-
-	result, err := cld.Upload.Upload(ctx, file, uploadParam)
-	if err != nil {
-		return "", err
-	}
-
-	return result.SecureURL, nil
 }

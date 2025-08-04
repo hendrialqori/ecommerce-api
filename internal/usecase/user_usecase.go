@@ -17,7 +17,7 @@ import (
 )
 
 type UserUseCase interface {
-	Register(ctx context.Context, req *model.RegisterUserRequest) (*model.UserResponse, error)
+	Register(ctx context.Context, req *model.RegisterUserRequest) error
 	Login(ctx context.Context, req *model.LoginUserRequest) (*model.TokenResponse, error)
 	Update(ctx context.Context, req *model.UpdateUserRequest) (*model.UserResponse, error)
 	Current(ctx context.Context, email string) (*model.UserResponse, error)
@@ -61,7 +61,7 @@ func (u *UserUseCaseImpl) Update(ctx context.Context, req *model.UpdateUserReque
 
 	if err := u.UserRepository.Update(ctx, user); err != nil {
 		u.Logger.WithError(err).Error("failed to update user")
-		return nil, exception.ErrInternalServerError
+		return nil, fiber.NewError(fiber.StatusInternalServerError, err.Error())
 	}
 
 	return mapper.ToUserResponse(user), nil
@@ -131,19 +131,22 @@ func (u *UserUseCaseImpl) Login(ctx context.Context, req *model.LoginUserRequest
 }
 
 // Register implements UserUseCase.
-func (u *UserUseCaseImpl) Register(ctx context.Context, req *model.RegisterUserRequest) (*model.UserResponse, error) {
+func (u *UserUseCaseImpl) Register(ctx context.Context, req *model.RegisterUserRequest) error {
 	if err := u.Validate.Struct(req); err != nil {
 		u.Logger.WithError(err).Error("Validation failed for register request")
-
-		return nil, err
+		return err
 	}
 
-	// Check if user already exists
-	existingUser, _ := u.UserRepository.FindByEmail(ctx, req.Email)
+	countUser, err := u.UserRepository.CountByEmail(ctx, req.Email)
 
-	if existingUser != nil {
+	if err != nil {
+		u.Logger.WithError(err).Error("failed count user by username")
+		return exception.ErrInternalServerError
+	}
+
+	if countUser > 0 {
 		u.Logger.Warn("user already exists")
-		return nil, exception.ErrDataAlreadyExists
+		return exception.ErrDataAlreadyExists
 	}
 
 	user := &domain.User{
@@ -162,7 +165,7 @@ func (u *UserUseCaseImpl) Register(ctx context.Context, req *model.RegisterUserR
 
 	if err := u.UserRepository.Create(ctx, user); err != nil {
 		u.Logger.WithError(err).Error("failed create new user")
-		return nil, exception.ErrInternalServerError
+		return err
 	}
 
 	// Create toko for the user
@@ -173,10 +176,10 @@ func (u *UserUseCaseImpl) Register(ctx context.Context, req *model.RegisterUserR
 
 	if err := u.TokoRepository.Create(ctx, toko); err != nil {
 		u.Logger.WithError(err).Error("failed create new toko for user")
-		return nil, exception.ErrInternalServerError
+		return err
 	}
 
-	return mapper.ToUserResponse(user), nil
+	return nil
 }
 
 func NewUserUseCase(

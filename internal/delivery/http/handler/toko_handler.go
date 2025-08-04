@@ -103,7 +103,7 @@ func (h *TokoHandler) Update(c *fiber.Ctx) error {
 	}
 
 	namaToko := c.FormValue("nama_toko")
-	file, err := c.FormFile("file")
+	file, err := c.FormFile("files")
 	if err != nil {
 		h.logger.WithError(err).Error("Failed to get form file")
 		return fiber.NewError(fiber.StatusBadRequest, err.Error())

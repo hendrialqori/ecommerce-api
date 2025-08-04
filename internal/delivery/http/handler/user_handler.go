@@ -27,18 +27,16 @@ func (h *UserHandler) Register(c *fiber.Ctx) error {
 		return err
 	}
 
-	res, err := h.UserUseCase.Register(c.Context(), req)
-
+	err := h.UserUseCase.Register(c.Context(), req)
 	if err != nil {
-		h.Logger.WithError(err).Error("error user register")
+		h.Logger.WithError(err).Error("error user login")
 		return err
 	}
 
 	return c.
-		Status(fiber.StatusCreated).
-		JSON(&model.WebResponse[*model.UserResponse]{
-			StatusCode: fiber.StatusCreated,
-			Data:       res,
+		Status(fiber.StatusOK).
+		JSON(&model.WebResponse[any]{
+			StatusCode: fiber.StatusOK,
 			Message:    "User registered successfully",
 		})
 }

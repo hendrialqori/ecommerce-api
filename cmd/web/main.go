@@ -58,6 +58,13 @@ func main() {
 		productUseCase = usecase.NewProductUseCase(productRepo, logger, validate)
 		productHandler = handler.NewProductHandler(productUseCase, logger)
 
+		productLogRepo = repository.NewProductLogRepository(db)
+		trxDetailRepo  = repository.NewTrxDetailRepository(db)
+
+		trxRepo    = repository.NewTrxRepository(db)
+		trxUseCase = usecase.NewTrxUseCase(trxRepo, productRepo, productLogRepo, trxDetailRepo, logger, validate)
+		trxHandler = handler.NewTrxHandler(trxUseCase, logger)
+
 		provinceCityUseCase = usecase.NewProvinceCityUseCase(logger)
 		provinceCityHandler = handler.NewProvinceCityHandler(provinceCityUseCase, logger)
 	)
@@ -75,6 +82,7 @@ func main() {
 	route.RegisterAddressRoute(app, addressHandler, auth)
 	route.RegisterProductRoute(app, productHandler, auth)
 	route.NewRegisterProductPhotoRoute(app, photoHandler, auth)
+	route.NewRegisterTrxRoute(app, trxHandler, auth)
 	route.NewRegisterProvinceCityRoute(app, provinceCityHandler, auth)
 
 	go func() {
